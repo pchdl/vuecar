@@ -1,0 +1,158 @@
+html{
+	/*禁用系统默认菜单*/
+	-webkit-touch-callout:none;
+	/*关闭iphone&&Android的浏览器纵向和横向模式中自动调整字体大小的功能*/
+	-webkit-text-size-adjust:100%;   
+}
+html,body{
+	margin:0;
+	padding:0;
+	width: 100%;
+	height: 100%;
+	overflow:hidden;
+	font-size: 100px;
+}
+div{
+	margin: 0;
+	padding: 0;
+}
+/*清除浮动的影响*/
+.clear:after{
+	display: block;
+	content: '';
+	height: 0;
+	clear: both;
+}
+
+#app{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow:hidden;
+}
+.header{
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	left: 0;
+	top: 0;
+	height: .48rem;
+	line-height: .48rem;
+	font-size: .18rem;
+	text-align: center;
+	background-color: #03df34;
+	color: #FFF;
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+}
+li{
+	font-size: .12rem;
+}
+.carbox{
+	position: absolute;
+	z-index: 5;
+	width: 100%;
+	height: auto;
+	overflow-y: auto;
+	top: .5rem;
+	left: 0;
+	padding: .1rem;
+	box-sizing: border-box;
+}
+.carlist{
+	border-bottom:solid 1px #ddd;
+	padding: .15rem 0;
+	font-size: .14rem;
+	display: flex;
+	align-items: center;
+}
+.checkbox{
+	float: left;
+	width: 10%;
+	text-align: center;
+}
+.inp{
+	width: 20px;
+	height: 20px;
+}
+.img{
+	float: left;
+	width: 18%;
+}
+.img img{
+	width: 100%;
+}
+.info{
+	float: left;
+	margin-left: 5%;
+	width: 65%;
+	
+}
+.price{
+	color: #ef23ab;
+}
+.btn{
+	padding-top: .1rem;
+}
+.change{
+	float: left;
+	display:block;
+	font-size: .14rem;
+	width: .3rem;
+	height: .3rem;
+	line-height: .3rem;
+	text-align: center;
+	border: solid 1px #ddd;
+}
+.count{
+	float: left;
+	display:block;
+	width: .4rem;
+	height: .3rem;
+	font-size: .14rem;
+	line-height: .3rem;
+	text-align: center;
+	border-top: solid 1px #ddd;
+	border-bottom: solid 1px #ddd;
+}
+.lit{
+	float: left;
+	display: block;
+	width: auto;
+	height: .32rem;
+	line-height: .32rem;
+	margin-left: .1rem;
+
+}
+.footer{
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	height: .52rem;
+	line-height: .52rem;
+	left: 0;
+	bottom: 0;
+	display:flex;
+	align-items: center;
+	border-top:solid 1px #ddd;
+	background-color: #de2312;
+	font-size: .18rem;
+	text-align: center;
+}
+.allselect{
+	float: left;
+	width: 15%;
+}
+.total{
+	float: left;
+	width: 50%;
+}
+.sum{
+	float: right;
+	width: 35%;
+	font-size: .16rem;
+}
