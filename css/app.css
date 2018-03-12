@@ -161,7 +161,6 @@ li{
 	display:flex;
 	align-items: center;
 	border-top:solid 1px #ddd;
-	background-color: #de2312;
 	font-size: .18rem;
 	text-align: center;
 }
@@ -172,9 +171,14 @@ li{
 .total{
 	float: left;
 	width: 50%;
+	text-align: left;
+	text-indent:.1rem;
+	font-size: .14rem;
 }
 .sum{
 	float: right;
 	width: 35%;
 	font-size: .16rem;
+	background-color: #de2312;
+	color:#fff;
 }

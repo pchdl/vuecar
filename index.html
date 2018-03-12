@@ -28,9 +28,9 @@
     	</li>
     </ul>
 	<footer class="footer clear">
-		<div class="allselect"><input type="checkbox" class="inp"  @click="checkall"></div>
+		<div class="allselect"><input type="checkbox" class="inp" v-model="checkedall"  @click="checkall"></div>
 		<div class="total">总计：￥{{totals}}</div>
-		<div class="sum">结算</div>
+		<div class="sum">去结算</div>
 	</footer>
 </div>
 <script src="js/vue.min.js"></script>

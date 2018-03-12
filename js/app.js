@@ -17,7 +17,8 @@ var app = new Vue({
 			{'name':'韩版潮流手表女生石英腕表', 'img':'img/4.png', 'price':68},
 			{'name':'国行sony索尼a6000微单相机', 'img':'img/5.png', 'price':3548}
 		],
-		total:0
+		total:0,
+		checkedall:false
 	},
 	filters:{
 		ft:function(v,n){//v为默认的要过滤的值，n传过来的参数
@@ -72,6 +73,7 @@ var app = new Vue({
 		//计算总金额
 		totals:function(){
 			var all = 0;
+			var ff = 1;
 			for(var i in this.goods){
 				var item = this.goods[i];
 				if(item.act){
@@ -79,8 +81,12 @@ var app = new Vue({
 						this.$set(item,'num',0);
 					}
 					all += item.num*item.price;
+				}else{
+					this.checkedall = false;//取消全选
+					ff = 0;
 				}
 			}
+			if(ff===1){this.checkedall = true;}//如果上面全部勾选上，则响应全选
 			return all.toFixed(2);
 
 		}
