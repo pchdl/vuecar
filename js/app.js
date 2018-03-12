@@ -88,7 +88,9 @@ var app = new Vue({
 					all += this.goods[i].num*this.goods[i].price;
 				}
 			}
+			alert(this.goods[1].num)
 			return all.toFixed(2);
+
 		}
 	}
 })
