@@ -1,3 +1,13 @@
+//自适应
+(function(){
+	document.documentElement.style.fontSize = document.documentElement.clientWidth/750*100;
+	var header = document.querySelector('.header').clientHeight;
+	var footer = document.querySelector('.footer').clientHeight;
+	var body = document.documentElement.clientHeight;
+	var carbox = document.querySelector('.carbox');
+	carbox.style.height = body-header-footer+'px';
+})();
+
 var app = new Vue({
 	el:'#app',
 	data:{
@@ -7,6 +17,7 @@ var app = new Vue({
 			{'name':'韩版潮流手表女生石英腕表', 'img':'img/4.png', 'price':68},
 			{'name':'国行sony索尼a6000微单相机', 'img':'img/5.png', 'price':3548}
 		],
+		
 		total:0
 	},
 	filters:{
@@ -25,6 +36,7 @@ var app = new Vue({
 		}
 	},
 	methods:{
+		//点击数量增加或减少
 		change:function(n,item){
 			if(!item.num){
 				this.$set(item,'num',0);
@@ -38,6 +50,7 @@ var app = new Vue({
 			}
 			
 		},
+		//勾选一个商品
 		check:function(item){
 			if(!item.num){
 				this.$set(item,'num',0);
@@ -47,9 +60,27 @@ var app = new Vue({
 				this.$set(item,'act',false);
 			}
 			item.act = !item.act;
+		},
+		
+		//全选和反选
+		checkall:function(){
+			// console.log(this.checked)
+			var tt = 0;
+			var that = this;
+			
+			for(var i in this.goods){
+				var item = this.goods[i];
+				if(!this.checked){//全选
+					item.act = true;
+				}else{//全不选
+					item.act = false;
+				}
+			}
+			
 		}
 	},
 	computed:{
+		//计算总金额
 		totals:function(){
 			var all = 0;
 			for(var i in this.goods){

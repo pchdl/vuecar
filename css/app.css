@@ -11,6 +11,7 @@ html,body{
 	height: 100%;
 	overflow:hidden;
 	font-size: 100px;
+	font-family: microsoft YaHei;
 }
 div{
 	margin: 0;
@@ -36,8 +37,8 @@ div{
 	width: 100%;
 	left: 0;
 	top: 0;
-	height: .48rem;
-	line-height: .48rem;
+	height: .45rem;
+	line-height: .45rem;
 	font-size: .18rem;
 	text-align: center;
 	background-color: #03df34;
@@ -58,14 +59,14 @@ li{
 	width: 100%;
 	height: auto;
 	overflow-y: auto;
-	top: .5rem;
+	top: .45rem;
 	left: 0;
 	padding: .1rem;
 	box-sizing: border-box;
 }
 .carlist{
 	border-bottom:solid 1px #ddd;
-	padding: .15rem 0;
+	padding: .05rem 0;
 	font-size: .14rem;
 	display: flex;
 	align-items: center;
@@ -76,12 +77,12 @@ li{
 	text-align: center;
 }
 .inp{
-	width: 20px;
-	height: 20px;
+	width: 15px;
+	height: 15px;
 }
 .img{
 	float: left;
-	width: 18%;
+	width: 20%;
 }
 .img img{
 	width: 100%;
@@ -90,7 +91,7 @@ li{
 	float: left;
 	margin-left: 5%;
 	width: 65%;
-	
+	font-size: .13rem;
 }
 .price{
 	color: #ef23ab;
@@ -102,19 +103,19 @@ li{
 	float: left;
 	display:block;
 	font-size: .14rem;
-	width: .3rem;
-	height: .3rem;
-	line-height: .3rem;
+	width: .25rem;
+	height: .25rem;
+	line-height: .22rem;
 	text-align: center;
 	border: solid 1px #ddd;
 }
 .count{
 	float: left;
 	display:block;
-	width: .4rem;
-	height: .3rem;
-	font-size: .14rem;
-	line-height: .3rem;
+	width: .3rem;
+	height: .25rem;
+	font-size: .13rem;
+	line-height: .23rem;
 	text-align: center;
 	border-top: solid 1px #ddd;
 	border-bottom: solid 1px #ddd;
@@ -132,8 +133,8 @@ li{
 	position: absolute;
 	z-index: 10;
 	width: 100%;
-	height: .52rem;
-	line-height: .52rem;
+	height: .5rem;
+	line-height: .5rem;
 	left: 0;
 	bottom: 0;
 	display:flex;
