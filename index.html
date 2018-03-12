@@ -13,16 +13,16 @@
 
     <ul class="carbox">
     	<li class="carlist clear" v-for="item in goods">
-			<div class="checkbox"><input type="checkbox" class="inp" @click="check(item)"></div>
+			<div class="checkbox"><input type="checkbox" class="inp" v-model="item.act"></div>
 			<div class="img"><img v-bind:src="item.img"></div>
 			<div class="info">
 			    {{item.name}}<br>
 			    ￥<span class="price">{{item.price}}</span>
 			    <div class="btn clear">
 					<span class="change" @click="change(0,item)">-</span>
-					<span class="count">{{item.num | ft}}</span>
+					<span class="count">{{item.num | ft(0)}}</span>
 					<span class="change" @click="change(1,item)">+</span>
-					<span class="lit">￥{{item.price * item.num | flg}}</span>
+					<span class="lit">￥{{item.price * item.num | ft(1)}}</span>
 			    </div>
 			</div>
     	</li>

@@ -17,21 +17,16 @@ var app = new Vue({
 			{'name':'韩版潮流手表女生石英腕表', 'img':'img/4.png', 'price':68},
 			{'name':'国行sony索尼a6000微单相机', 'img':'img/5.png', 'price':3548}
 		],
-		
 		total:0
 	},
 	filters:{
-		ft:function(v){
+		ft:function(v,n){//v为默认的要过滤的值，n传过来的参数
 			if(isNaN(v)){
 				v = 0;
 			}
-			return v;
-		},
-		flg:function(v){
-			if(isNaN(v)){
-				v = 0;
+			if(n===1){
+				v = v.toFixed(2);
 			}
-			v = v.toFixed(2);
 			return v;
 		}
 	},
@@ -55,28 +50,22 @@ var app = new Vue({
 			if(!item.num){
 				this.$set(item,'num',0);
 			}
-			if(!item.act){
-			//if(typeof item.act === 'undefined'){
+			// if(!item.act){
+			if(typeof item.act === 'undefined'){
 				this.$set(item,'act',false);
 			}
 			item.act = !item.act;
 		},
 		
 		//全选和反选
-		checkall:function(){
-			// console.log(this.checked)
-			var tt = 0;
-			for(var i in this.goods){
-				var item = this.goods[i];
-				if(!this.checked){//全选
-					item.act = true;
-				}else{//全不选
-					item.act = false;
-				}
-			}
-			console.log(this.goods);
-
-			
+		checkall:function(e){
+			var that = this;
+			var flag = e.currentTarget.checked;
+			this.goods.forEach( function(v, i) {
+				if(typeof v.act === 'undefined'){that.$set(v,'act',flag)}
+				v.act = flag;
+				if(!v.num){that.$set(v,'num',1)}
+			});
 		}
 	},
 	computed:{
@@ -84,11 +73,14 @@ var app = new Vue({
 		totals:function(){
 			var all = 0;
 			for(var i in this.goods){
-				if(this.goods[i].act){
-					all += this.goods[i].num*this.goods[i].price;
+				var item = this.goods[i];
+				if(item.act){
+					if(!item.num){
+						this.$set(item,'num',0);
+					}
+					all += item.num*item.price;
 				}
 			}
-			alert(this.goods[1].num)
 			return all.toFixed(2);
 
 		}
