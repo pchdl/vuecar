@@ -66,8 +66,6 @@ var app = new Vue({
 		checkall:function(){
 			// console.log(this.checked)
 			var tt = 0;
-			var that = this;
-			
 			for(var i in this.goods){
 				var item = this.goods[i];
 				if(!this.checked){//全选
@@ -76,6 +74,8 @@ var app = new Vue({
 					item.act = false;
 				}
 			}
+			console.log(this.goods);
+
 			
 		}
 	},

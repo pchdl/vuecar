@@ -1,9 +1,29 @@
+@charset "utf-8";
 html{
 	/*禁用系统默认菜单*/
 	-webkit-touch-callout:none;
 	/*关闭iphone&&Android的浏览器纵向和横向模式中自动调整字体大小的功能*/
 	-webkit-text-size-adjust:100%;   
 }
+input, textarea, button, a {
+	/*表单或链接元素在手机中点击时出现边框或者彩色背景区域，这句话是去除点击的背景框*/
+	-webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+}
+button, input, select, textarea{
+	/*使得表单元素在IE下能继承字体大小*/
+	font-size: 100%;
+	outline: none;
+}
+button, input{
+	overflow:visible;
+}
+[type="checkbox"],
+[type="radio"]{
+	box-sizing: border-box;
+	padding:0;
+}
+
+
 html,body{
 	margin:0;
 	padding:0;
@@ -11,7 +31,8 @@ html,body{
 	height: 100%;
 	overflow:hidden;
 	font-size: 100px;
-	font-family: microsoft YaHei;
+	font-style:normal;
+	font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
 }
 div{
 	margin: 0;
@@ -102,10 +123,10 @@ li{
 .change{
 	float: left;
 	display:block;
-	font-size: .14rem;
+	font-size: .2rem;
 	width: .25rem;
 	height: .25rem;
-	line-height: .22rem;
+	line-height: .25rem;
 	text-align: center;
 	border: solid 1px #ddd;
 }
